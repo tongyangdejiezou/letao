@@ -1,6 +1,4 @@
 $(function(){
-
-
   $("#form").bootstrapValidator({
     // 配置图标
     feedbackIcons: {
