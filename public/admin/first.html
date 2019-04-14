@@ -12,7 +12,12 @@
     />
     <link rel="stylesheet" href="./lib/nprogress/nprogress.css" />
     <link rel="stylesheet" href="./css/common.css" />
-    <style></style>
+    <style>
+      th,
+      td {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <!-- 左侧侧边栏 -->
@@ -72,6 +77,26 @@
           <li>分类管理</li>
           <li class="active">一级分类</li>
         </ol>
+
+        <div class="lt_content">
+          <button class="btn btn-default">添加分类</button>
+          <table class="table table-bordered table-hover mt_20">
+            <thead>
+              <tr style="text-align:center">
+                <th width="20%">序号</th>
+                <th width="80%">一级分类名</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+          </table>
+
+          <div class="text-right">
+              <ul id="paginator"></ul>
+          </div>
+          
+        </div>
       </div>
     </div>
 
@@ -93,11 +118,23 @@
       </div>
     </div>
 
+
+    <script type="text/html" id="firstTpl">
+      {{ each rows v i}}
+      <tr>
+        当前页个数 加上前面的个数 
+        <td>{{ (page - 1)*size + i + 1 }}</td>
+        <td>{{v.categoryName}}</td>
+      </tr>
+      {{ /each }}
+    </script>
     <script src="./lib/jquery/jquery.min.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
     <script src="./js/common.js"></script>
-    <!-- <script src="./js/index.js"></script> -->
+    <script src="./js/first.js"></script>
   </body>
 </html>
